@@ -24,7 +24,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
 header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;gap:1.5rem;height:3.5rem}
-.brand{font-family:var(--serif);font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--ink);text-decoration:none;white-space:nowrap}
 nav{display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none;flex:1}
 nav a{color:var(--muted);text-decoration:none;font-size:1.00rem;font-weight:500;white-space:nowrap}
 nav a:hover{color:var(--ink)}
@@ -62,6 +62,13 @@ h3{font-family:var(--serif);font-size:1.2rem;margin:0 0 .4rem}
 .tl span{color:var(--muted)}
 .todo{color:var(--muted);font-style:italic}
 .card .when{margin:.9rem 0 0;font-size:.8rem;color:var(--muted)}
+.pubs{list-style:none;margin:0;padding:0;counter-reset:pub}
+.pubs:has(li)+.pubs-empty{display:none}
+.pub{display:grid;grid-template-columns:2.5rem 1fr;gap:0 1rem;padding:1.1rem 0;border-top:1px solid var(--line);counter-increment:pub}
+.pub::before{content:counter(pub);color:var(--muted);font-variant-numeric:tabular-nums}
+.pub-title{font-family:var(--serif);font-size:1.15rem;line-height:1.35;color:var(--ink)}
+.pub-meta{color:var(--muted);font-size:.92rem;margin-top:.2rem}
+.pub-links{display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;margin-top:.5rem;font-size:.92rem;color:var(--muted)}
 .contact dl{display:grid;grid-template-columns:8rem 1fr;gap:.6rem 1rem;margin:0}
 .contact dt{color:var(--muted)}.contact dd{margin:0}
 footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
@@ -96,7 +103,7 @@ footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
 
 <header class="top"><div class="wrap">
   <a class="brand" href="#home">A. Muntasir</a>
-  <nav aria-label="Main"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav>
+  <nav aria-label="Main"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#publications">Publications</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main>
@@ -173,6 +180,41 @@ footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
 <section id="certifications"><div class="wrap">
   <h2>Certifications</h2>
   <p>Kindly visit my <a href="https://www.linkedin.com/in/maamuntasir/details/certifications/">LinkedIn</a> profile for my certifications.</p>
+</div></section>
+
+<section id="publications"><div class="wrap">
+  <h2>Publications</h2>
+
+  <!-- HOW TO ADD A PUBLICATION
+       Copy the whole <li class="pub"> block below, paste it inside <ol class="pubs">,
+       and replace the text. Newest first. Numbers are added automatically.
+       Delete the line with the "pub-meta" class if you don't want authors/journal shown.
+
+       <li class="pub">
+         <div>
+           <div class="pub-title">Title of your publication</div>
+           <div class="pub-meta">Your Name, Co-author Name · Journal or Conference Name · 2026</div>
+           <div class="pub-links">
+             <span>DOI: <a href="https://doi.org/10.0000/example">10.0000/example</a></span>
+             <a href="https://link-to-the-publication.com">View publication</a>
+           </div>
+         </div>
+       </li>
+  -->
+
+  <ol class="pubs">
+    <li class="pub">
+         <div>
+           <div class="pub-title">Bangladesh-Context Solar-Aware EV Charging Scheduling: A Full-Year Comparison of Rule-Based, Greedy Priority and Rolling-Horizon Greedy Algorithms</div>
+           <div class="pub-meta">Mohammad Nafiz Hossain, Tanzim Ahmed Taukir, Mohammad Sultan Shah Saimon, Md Mishfer Alam, Md. Sayem-ur-Rahman Shadhin, Md. Abdullah Al Muntasir · IEEE International Conference on Power, Electrical, Electronics and Industrial Applications (PEEIACON 2026) · 2026</div>
+           <div class="pub-links">
+             <span>DOI: <a href="https://doi.org/10.0000/example">10.0000/example</a></span>
+             <a href="https://link-to-the-publication.com">View publication</a>
+           </div>
+         </div>
+       </li>
+  </ol>
+  <p class="pubs-empty todo">No publications yet. They will be listed here.</p>
 </div></section>
 
 <section id="contact" class="contact" style="border-bottom:0"><div class="wrap">
